@@ -1,9 +1,24 @@
 $(document).ready(function() {
-    $('#open').click(function() {
-        $('#envelope').removeClass('close').addClass('open');
+    var envelope = $('#envelope');
+    var btn_open = $("#open");
+    var btn_reset = $('#reset');
+    
+    envelope.click(function() {
+        open();
     });
-
-    $('#reset').click(function() {
-        $('#envelope').removeClass('open').addClass('close');
+    btn_open.click(function() {
+        open();
     });
-});
+    btn_reset.click(function() {
+        close();
+    });
+    
+    function open() {
+        envelope.addClass('open')
+            .removeClass('close');
+    }
+    function close() {
+        envelope.addClass('close')
+            .removeClass('open');
+    }
+})
